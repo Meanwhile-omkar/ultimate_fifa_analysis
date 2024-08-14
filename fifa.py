@@ -7,6 +7,19 @@ import plotly.io as pio
 # Load your cleaned and refined dataset
 df = pd.read_pickle("fifa_data.pkl")  # Replace with your .pkl file path
 
+# Google Analytics tracking code
+st.markdown("""
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCWV7EGHM7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VCWV7EGHM7');
+    </script>
+""", unsafe_allow_html=True)
+
 # Initialize the session state for page navigation
 if 'page' not in st.session_state:
     st.session_state.page = "main"
